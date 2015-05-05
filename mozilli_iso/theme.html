@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}> 
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+
+<body id="earthday-jp">
+	<!-- Header -->
+	<div id="header">
+	<a href="<{$xoops_url}>" title="" /><img src="<{$xoops_imageurl}>images/logo.gif" alt="" title="" width="176" height="70" align="left" ></a>
+	<h1><a href="/" title="My Home Page" accesskey="1">My Home Page</a></h1>
+		<div id="header_right">
+		<ul>
+			<li<{if $xoops_dirname == "contact"}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/contact/" title="Contact">Contact</a></li>
+			<li<{if $xoops_dirname == "mylinks"}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/mylinks/" title="Links">Links</a></li>
+			<li<{if $xoops_dirname == "mydownloads"}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/mydownloads/" title="Downloads">Downloads</a></li>
+			<li<{if $xoops_dirname == "newbb"}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/newbb/" title="Forum">Forum</a></li>
+			<li<{if $xoops_dirname == "news"}> class="active"<{/if}>><a href="<{$xoops_url}>/modules/news/" title="News">News</a></li>
+			<li<{if $xoops_dirname == ""}> class="active"<{/if}>><a href="<{$xoops_url}>/" title="Home">Home</a></li>
+		</ul>
+		<form id="search" method="get" action="<{$xoops_url}>/search.php" title="Search">
+		<div>
+			<label for="query" title="Search" />Search:</label>
+            <input type="hidden" name="action" value="results" />
+			<input type="text" id="query" name="query" size="30" />
+			<input type="submit" id="submit" name="searchSubmit" value="Go" />
+		</div>
+		</form>
+		</div>
+	</div>
+	<!-- /Header -->
+
+	<!-- HeaderBar -->
+	<div id="header_bar">
+		<div id="header_user">
+			<{if $xoops_isuser}> <a href="<{$xoops_url}>/user.php"> 
+			Hellow! <{$xoops_uname}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<{$xoops_url}>/user.php?op=logout">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+			<{else}>
+			<a href="<{$xoops_url}>/user.php">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<{$xoops_url}>/register.php">Register</a>&nbsp;&nbsp;|
+			<{/if}>
+		</div>
+	</div>
+	<!-- HeaderBar -->
+
+	<!-- Container -->
+	<div id="container">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr> 
+        <td id="leftcolumn"> 
+          <!-- LeftColumn -->
+		  <{foreach item=block from=$xoops_lblocks}>
+          <div class="leftblockTop"><img src="<{$xoops_imageurl}>images/spacer.gif" height="9" width="180" /></div>
+          <div class="blockTitle"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+          <div class="leftblockBottom"><img src="<{$xoops_imageurl}>images/spacer.gif" height="9" width="180" /></div>
+		  <{/foreach}> 
+          <!-- /LeftColumn -->
+        </td>
+        <td id="centercolumn"> 
+          <!-- Display center blocks if any -->
+          <{if $xoops_showcblock == 1}> 
+          <table cellpadding="0" cellspacing="0">
+            <tr> 
+              <td id="centerCcolumn" colspan="2"> 
+                <!-- Center-CenterColumn -->
+                <{foreach item=block from=$xoops_ccblocks}> 
+               <div class="blockTitle"><{$block.title}></div>
+                <div class="blockContent"><{$block.content}></div>
+                <{/foreach}> 
+                <!-- /Center-CenterColumn -->
+              </td>
+            </tr>
+            <tr> 
+              <td id="centerLcolumn"> 
+                <!-- Center-LeftColumn -->
+                <{foreach item=block from=$xoops_clblocks}>
+                <div class="blockTitle"><{$block.title}></div>
+                <div class="blockContent"><{$block.content}></div>
+                <{/foreach}> 
+                <!-- /Center-LeftColumn -->
+              </td>
+              <td id="centerRcolumn"> 
+                <!-- Center-RightColumn -->
+                <{foreach item=block from=$xoops_crblocks}>
+                <div class="blockTitle"><{$block.title}></div>
+                <div class="blockContent"><{$block.content}></div>
+                <{/foreach}> 
+                <!-- /Center-RightColumn -->
+              </td>
+            </tr>
+          </table>
+          <{/if}> 
+          <!-- End display center blocks -->
+          <div id="content"><{$xoops_contents}></div>
+        </td>
+        <{if $xoops_showrblock == 1}> 
+        <td id="rightcolumn"> 
+          <!-- Right Column -->
+          <{foreach item=block from=$xoops_rblocks}>
+          <div class="blockTitle"><{$block.title}></div>
+          <div class="blockContent"><{$block.content}></div>
+          <{/foreach}> 
+          <!-- /Righ tColumn -->
+        </td>
+        <{/if}>
+		</tr>
+            </tr>
+          </table>
+
+	</div>
+	<!-- /Container -->
+	
+	<!-- Footer -->
+	<div id="footer">
+		<{$xoops_footer}> &nbsp;|&nbsp; Design by <a href="http://art-nomad.net" target="_blank">artNOMAD</a> 
+	</div>
+	<!-- /Footer -->
+
+</body>
+</html>
